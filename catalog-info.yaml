@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mz45uldqy-dotnet-basic-gitops
+  description: This is GitOps manifest for mz45uldqy-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=mz45uldqy-dotnet-basic
+    backstage.io/kubernetes-id: mz45uldqy-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mz45uldqy-dotnet-basic
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mz45uldqy-dotnet-basic
